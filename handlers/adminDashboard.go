@@ -189,3 +189,18 @@ func DeleteUser(c *gin.Context) {
 	// c.HTML(http.StatusOK, "admin-dashboard.html", DataMap)
 
 }
+
+func SearchUser(c *gin.Context) {
+
+	Search := "%" + c.Request.FormValue("search") + "%"
+	fmt.Println(Search)
+	result := initialisers.DB.Raw(`SELECT * FROM users WHERE user_name ILIKE ?`, Search).Scan(&Users)
+	ser := make([]models.Serial, int(result.RowsAffected))
+	for i := 0; i < int(result.RowsAffected); i++ {
+		ser[i].Ser = i + 1
+	}
+	DataMap["UsersList"] = Users
+	DataMap["serial"] = ser
+
+	c.HTML(http.StatusOK, "admin-dashboard.html", DataMap)
+}

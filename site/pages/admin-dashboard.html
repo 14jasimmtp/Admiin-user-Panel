@@ -13,6 +13,7 @@
     
     <div class="container-fluid">
       <a class="navbar-brand text-white fs-3" href="#" style="margin-left: 8%;">Admin</a>
+      
       <form style="margin-left: 65%;" class="d-flex" role="search" action="/CreateUser">
         <button class="btn btn-color-white" >Create User</button>
       </form>
@@ -24,7 +25,15 @@
 
     <center>
     <h2 class="p-1 mt-5">User Details</h2>
+    <form  class="form-inline my-2 my-lg-0" method="post">
+    
+      <input name="search" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+
+    </form>
 </center>
+
+
 <div class="p-5" style="width: 100%;">
  
       <table class="table table-success table-striped-columns table-hover " style="margin-left: 13%; width: 10%; display: inline-block">

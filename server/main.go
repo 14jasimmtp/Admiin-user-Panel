@@ -33,6 +33,8 @@ func main() {
 	r.POST("/DeleteUser", handlers.DeleteUser)
 	r.POST("/CreateUser", handlers.CreateUser)
 	r.GET("/CreateUser", handlers.GetCreateUser)
+	r.POST("/Admin-Dashboard",handlers.SearchUser)
+	
 
 	fmt.Println("listening and serving on http://localhost:8080")
 
